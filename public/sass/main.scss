@@ -1,0 +1,271 @@
+@font-face {
+	font-family: 'Montserrat', sans-serif;
+	src: url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+	font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f2f2f2;
+}
+
+a, p, span, h1 {
+	font-family: "Montserrat", sans-serif;
+}
+
+/* -----------------header------------------ */
+.header {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-image: url(../img/capa-madmax2.jpg);
+background-attachment: fixed;
+background-size: cover;
+height: 90vh;
+position: relative;
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.4);
+		}
+	&__menu {
+		display: flex;
+		justify-content: space-evenly;
+		width: 90%;
+		margin-top: 15px;
+		z-index: 1;
+		&-logo {
+			width: auto;
+			height: fit-content;
+			cursor: pointer;
+			}
+		&-list {
+			display: flex;
+			align-items: center;
+			margin: 0 20px;
+			li a {
+				color: #fff;
+				font-size: 12px;
+				margin: 0 20px;
+				font-weight: 700;
+				&:hover {
+					color: #e4bb23;
+				}
+			}
+		}
+		&-profile {
+			display: flex;
+			align-items: center;
+			img {
+				width: 45px;
+				height: 45px;
+				border-radius: 50%;
+			}
+			span{  
+				color: #fff;
+				font-size: 12px;
+				font-weight: 700;
+				margin-left: 25px;
+			}
+		}
+	}
+	&__content {
+		position: absolute;
+		bottom: 20px;
+		left: 15%;
+		width: 60%;
+		z-index: 1;
+		&-title {
+			color: #fff;
+			font-size: 60px;
+			margin: 0;
+		}
+		&-info {
+			display: flex; 
+			margin: 15px 0;
+			a {
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 14px;
+				margin-right: 20px ; 
+				font-weight: 400;
+				&:hover {
+					color: #e4bb23;
+				}
+			}
+		}
+		&-button { 
+			margin: 45px 0;
+			background-color: #e4bb23;
+			color: #000;
+			padding: 18px 40px;
+			display: block;
+			border-radius: 50px;
+			width: 240px;
+			text-align: right;
+			transition: all 0.3s ease-in-out;
+			&:hover {
+				background-color: #be9e28;
+			}
+			i {
+				margin-left: 10px;
+				font-size: 20px;
+			}
+		}
+		&-text {
+			color: #fff;
+			&:last-child {
+				color: #e4bb23;
+			}
+		}
+	}
+}
+  /* -----------------header-END------------------ */
+
+  /* -----------------tabs------------------ */
+.tabs {
+	width: 70%;
+	margin: 40px auto;
+	&__list {
+		display: flex;
+		justify-content: space-evenly;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+		&-item {
+			padding-bottom: 25px;
+			/* transition: all 0.1s ease-in-out; */
+			&:hover {
+				border-bottom: 1px solid #e4bb23;
+			}
+			a{
+				color: #e4bb23;
+				font-weight: 700;
+				font-size: 15px;
+			}
+		}
+	}
+}
+  /* -----------------tabs-END------------------ */
+
+  /* -----------------movies------------------ */
+.movies {
+	width: 70%;
+	margin: 0 auto;
+	&__row {
+		display: flex;
+	}
+	&__box {
+		margin: 6px;
+		background-color: #fff;
+		border-radius: 10px;
+		position: relative;
+		&:hover .movies__action {
+			visibility: visible;
+		}
+		&:hover .movies__box-img {
+			opacity: 0.7;
+		}
+		&-img {
+			width: 100%;
+			height: auto;
+			border-radius: 10px 10px 0 0;
+			cursor: pointer;
+			transition: all 0.4s ease-in-out; 
+		}
+	}
+	&__action {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		position: absolute;
+		top: 20%;
+		visibility: hidden;
+		transition: all 0.4s ease-in-out;
+		&-title {
+			color: #e4bb23;
+			font-size: 20px;
+			font-weight: 700;
+		} 
+	}
+	&__info {
+		padding: 10px;
+		&-title {
+			font-weight: 700;
+			font-size: 12px;
+			margin: 0; 
+		}
+		&-genre {
+			display: block;
+			color: #e4bb23;
+			font-size: 12px;
+			margin: 10px 0;
+			cursor: pointer;
+			&:hover {
+				text-decoration: underline;
+			} 
+		}
+		&-rating {
+			color: #000;
+			font-weight: 700;
+			font-size: 20px;
+		}	
+	}
+	&__like {
+		display: flex;
+		justify-content: space-between;
+		margin: 10px 0 0 0;
+	}
+}
+
+.fas {
+	&.fa-play { 
+		color: #fff;
+		font-size: 50px;
+	}	
+	&.fa-heart {
+		color: #ccc;
+		font-size: 20px;
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
+		&:hover {
+			color: #d8322c;
+		}
+	}
+}
+  /* -----------------movies-END------------------ */
+
+  /* -----------------footer------------------ */
+
+.footer {
+	background-color: #fff;
+	display: flex;
+	justify-content: space-around;
+	padding: 30px 0;
+	margin-top: 40px;
+	&_list {
+		display: flex;
+		color: #bababa;
+		&-item {
+			margin: 0 15px;
+			font-size: 20px;
+			cursor: pointer;
+			&:first-child:hover{
+				color: #1da1f2;
+			}
+			&:nth-child(2):hover{
+				color: #3b5998;
+			}
+			&:last-child:hover{
+				color: #ff1f93;
+			}
+		}
+	}
+
+}
